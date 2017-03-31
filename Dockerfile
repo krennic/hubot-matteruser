@@ -1,9 +1,5 @@
 FROM node:argon
 
-ARG hubot_owner
-ARG hubot_description
-ARG hubot_name
-
 RUN useradd -m -s /bin/bash hubot-matteruser
 
 RUN mkdir -p /usr/src/hubot-matteruser
@@ -16,7 +12,7 @@ USER hubot-matteruser
 RUN npm install -g yo
 RUN npm install -g generator-hubot
 
-RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_desciption}" --defaults \
+RUN echo "No" | yo hubot --adapter matteruser --owner="krennic" --name="alfred" --description="un larbin à votre disposition" --defaults \
 && sed -i '/heroku/d' external-scripts.json
 
 RUN rm hubot-scripts.json
