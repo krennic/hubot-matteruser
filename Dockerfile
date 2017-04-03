@@ -1,5 +1,9 @@
 FROM node:argon
 
+RUN apt-get update && \
+	apt-get install -y nano && \
+	rm -rf /var/lib/apt/lists/*
+
 RUN useradd -m -s /bin/bash hubot-matteruser && \
 	mkdir -p /usr/src/hubot-matteruser && \
 	chown hubot-matteruser:hubot-matteruser /usr/src/hubot-matteruser && \
@@ -10,9 +14,7 @@ WORKDIR /usr/src/hubot-matteruser
 
 USER hubot-matteruser
 
-RUN apt-get update && \
-	apt-get install -y nano && \
-	rm -rf /var/lib/apt/lists/*
+
 
 RUN npm install -g cofee-script yo generator-hubot  && \
 	#Install custom scripts
