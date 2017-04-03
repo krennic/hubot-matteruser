@@ -9,6 +9,19 @@
   "hubot-rules",
   "hubot-shipit",
 
-  #Custom
   "mattermost-slashbot",
+  "hubot-voting",
+  "hubot-terminal-calendar",
+  "hubot-birthday-reminder",
+  "hubot-remind-her",
+  "hubot-remind-advanced",
+  "hubot-onboarding",
+  "hubot-dns-watch",
+  "hubot-babyfoot",
+  "hubot-vsphere-commands",
+  "hubot-gitlab",
+  "hubot-sonarqube",
+  "hubot-jira-links",
+  "hubot-jira-bot",
+  "hubot-cron-event"
 ]
