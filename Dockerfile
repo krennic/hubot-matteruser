@@ -10,7 +10,11 @@ WORKDIR /usr/src/hubot-matteruser
 
 USER hubot-matteruser
 
-RUN npm install -g yo generator-hubot  && \
+RUN apt-get update && \
+	apt-get install -y nano && \
+	rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g cofee-script yo generator-hubot  && \
 	#Install custom scripts
 	npm install --save \
 	mattermost-slashbot \

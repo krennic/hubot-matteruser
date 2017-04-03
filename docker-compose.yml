@@ -10,6 +10,7 @@ services:
        hubot_description: <CHANGEME>
     restart: always
     user: hubot-matteruser
+    entrypoint: "/bin/bash"
     ports:
       - "8080:8080"
     environment:
