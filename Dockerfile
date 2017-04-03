@@ -16,7 +16,7 @@ USER hubot-matteruser
 
 
 
-RUN npm install -g cofee-script yo generator-hubot  && \
+RUN npm install -g coffee-script yo generator-hubot  && \
 	#Install custom scripts
 	npm install --save \
 	mattermost-slashbot \
