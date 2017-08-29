@@ -14,7 +14,7 @@ WORKDIR /usr/src/hubot-matteruser
 
 USER hubot-matteruser
 
-RUN npm install -g yo generator-hubot \
+RUN npm install -g yo generator-hubot &&\
 	npm install --save \
 	hubot-sonarqube \
 	hubot-jira-bot \
