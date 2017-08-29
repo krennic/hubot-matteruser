@@ -14,11 +14,16 @@ WORKDIR /usr/src/hubot-matteruser
 
 USER hubot-matteruser
 
-RUN npm install -g yo generator-hubot
+RUN npm install -g yo generator-hubot \
+	npm install --save \
+	hubot-sonarqube \
+	hubot-jira-bot \
+	hubot-jira-links
 	
 RUN echo "No" | yo hubot --adapter matteruser --owner="krennic" --name="alfred" --description="un larbin à votre disposition" --defaults && \
-	sed -i '/heroku/d' external-scripts.json && \
 	rm hubot-scripts.json
+
+COPY external-scripts.json external-scripts.json
 
 CMD ["-a", "matteruser"]
 ENTRYPOINT ["./bin/hubot"]
